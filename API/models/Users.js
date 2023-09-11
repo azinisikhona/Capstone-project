@@ -60,9 +60,11 @@ class Users{
     
         db.query(query, [data], (err) => {
           if (err) throw err;
-          let token = createToken(Users);
+          let token = createToken(user);
           res.json({
+            status: res.statusCode,
             msg: "You are now registered.",
+            token,
           });
         });
       }

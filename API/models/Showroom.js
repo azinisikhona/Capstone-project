@@ -1,34 +1,83 @@
 const db = require("../config");
 
 class Showroom {
+    // addCar(req, res) {
+    //     const car = {
+    //       Brands: req.body.Brands,
+    //       Model: req.body.Model,
+    //       MakeYear: req.body.MakeYear,
+    //       Price: req.body.Price,
+    //       Picture: req.body.Picture,
+    //       SupplierID: req.body.SupplierID
+    //     };
+    
+    //     const query = `INSERT INTO Showroom SET ?`;
+    //     db.query(query, car, (err, result) => {
+    //       if (err) {
+    //         console.error(err);
+    //         res.status(500).json({
+    //           status: 500,
+    //           msg: "Failed to add car",
+    //         });
+    //       } else {
+    //         res.json({
+    //           status: res.statusCode,
+    //           msg: "Car added successfully",
+    //           CarID: result.insertId,
+    //         });
+    //       }
+    //     });
+    //   }
+ 
     addCar(req, res) {
-        const car = {
-          Brands: req.body.Brands,
-          Model: req.body.Model,
-          MakeYear: req.body.MakeYear,
-          Price: req.body.Price,
-          Picture: req.body.Picture,
-        };
+      const { Brands, Model, MakeYear, Price, Picture, SupplierID } = req.body;
     
-        const query = `INSERT INTO Showroom SET ?`;
-        db.query(query, car, (err, result) => {
-          if (err) {
-            console.error(err);
-            res.status(500).json({
-              status: 500,
-              msg: "Failed to add car",
-            });
-          } else {
-            res.json({
-              status: res.statusCode,
-              msg: "Car added successfully",
-              CarID: result.insertId,
-            });
-          }
-        });
-      }
+      // First, you should check if the supplied SupplierID exists in the Suppliers table.
+      const supplierQuery = 'SELECT SupplierID FROM Suppliers WHERE SupplierID = ?';
+      db.query(supplierQuery, [SupplierID], (supplierErr, supplierResult) => {
+        if (supplierErr) {
+          console.error(supplierErr);
+          res.status(500).json({
+            status: 500,
+            msg: 'Failed to add car - supplier lookup error',
+          });
+        } else if (supplierResult.length === 0) {
+          // If the supplier with the given ID does not exist, return an error.
+          res.status(400).json({
+            status: 400,
+            msg: 'Supplier with the provided ID does not exist',
+          });
+        } else {
+          // If the supplier exists, proceed to insert the car into the Showroom table.
+          const car = {
+            Brands,
+            Model,
+            MakeYear,
+            Price,
+            Picture,
+            SupplierID,
+          };
     
-
+          const insertQuery = 'INSERT INTO Showroom SET ?';
+          db.query(insertQuery, car, (err, result) => {
+            if (err) {
+              console.error(err);
+              res.status(500).json({
+                status: 500,
+                msg: 'Failed to add car',
+              });
+            } else {
+              res.json({
+                status: res.statusCode,
+                msg: 'Car added successfully',
+                CarID: result.insertId,
+              });
+            }
+          });
+        }
+      });
+    }
+    
 
   fetchShowroom(req, res) {
     const query = `
