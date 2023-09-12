@@ -25,7 +25,11 @@ const routes = [
     name: 'showroom',
     component: () => import('../views/ShowroomView.vue')
   },
-
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../components/RegistrationComp.vue')
+  }
   
 ]
 

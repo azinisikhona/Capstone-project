@@ -1,8 +1,8 @@
 <template>
   <div class="col-12 col-lg-3 col-sm-6 p-1">
     <div class="card">
-      <img :src="car.Picture" :alt="car.Brands" class="image" />
-      <div class="product-details">
+      <img :src="car.Picture" class="mx-auto"  alt="...">
+      <div class="car-details">
         <h3 class="Car-Brand">{{ car.Brands }}</h3>
         <p class="Car-Model">{{ car.Model }}</p>
         <p class="Car-Price">R{{ car.Price }}</p>
