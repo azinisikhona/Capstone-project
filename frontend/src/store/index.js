@@ -3,6 +3,8 @@ import axios from 'axios';
 const connection = 'https://celestial-autos.onrender.com/';
 export default createStore({
   state: {
+    isAuthenticated: false,
+    loginUser: null,
     users: null,
     user: null,
     showroom: null,
@@ -10,6 +12,12 @@ export default createStore({
   },
   
   mutations: {
+    setAuthenticated: (state, isAuthenticated) => {
+      state.isAuthenticated = isAuthenticated;
+    },
+    setLoginUser: (state, loginUser) => {
+      state.loginUser = loginUser;
+    },
     setUsers: (state, users) => {
       state.users =  users;
     },
@@ -71,6 +79,23 @@ export default createStore({
       }
     }, 
 
+    async login({ commit }, credentials) {
+      try {
+        const response = await axios.post(`${connection}login`, credentials);
+        if (response.status === 200) {
+          commit('setAuthenticated', true);
+          commit('setLoginUser', response.data); 
+        } else {
+          commit('setAuthenticated', false);
+          commit('setLoginUser', null);
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        commit('setAuthenticated', false);
+        commit('setLoginUser', null);
+      }
+    },
+
     async addNewCar(context, newCar) {
       try {
         const response = await axios.post(`${connection}addcar`, newCar);
@@ -85,8 +110,6 @@ export default createStore({
     async addNewUser(context, newUser) {
       try {
         const response = await axios.post(`${connection}register`, newUser);
-       
-      
         if (response.status === 201) {
           context.commit('addUser', newUser);
         }

@@ -1,6 +1,6 @@
 <template >
  <div v-if="showroom" class="row p-4">
-   <CardComp :v-for="car in showroom" :key="showroom.CarID" :car="car"/>
+   <CardComp v-for="car in showroom" :key="car.CarID" :car="car"/>
  </div>
  <div v-else>
     <SpinnerComp/>
