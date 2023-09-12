@@ -18,8 +18,15 @@ const routes = [
   {
     path: '/admin',
     name: 'admin',
-    componemt: () => import('../views/AdminView.vue')
-  }
+    component: () => import('../views/AdminView.vue')
+  },
+  {
+    path: '/showroom',
+    name: 'showroom',
+    component: () => import('../views/ShowroomView.vue')
+  },
+
+  
 ]
 
 const router = createRouter({

@@ -71,10 +71,10 @@
     <table class="col-12 w-100">
       <thead>
         <tr>
-          <th>Product Name</th>
-          <th>Quantity</th>
-          <th>Amount</th>
-          <th>Category</th>
+          <th>Brands</th>
+          <th>Model</th>
+          <th>Make Year</th>
+          <th>Price</th>
           <th>Picture</th>
           <th>Actions</th>
         </tr>
@@ -83,8 +83,8 @@
         <tr v-for="car in filteredShowroom" :key="car.CarID">
           <td>{{ car.Brands }}</td>
           <td>{{ car.Model }}</td>
-          <td>R{{ car.MakeYear }}</td>
-          <td>{{ car.Price }}</td>
+          <td>{{ car.MakeYear }}</td>
+          <td>R{{ car.Price }}</td>
           <td>
             <div class="card bg-transparent">
                 <img :src="car.Picture" class="mx-auto"  alt="...">
@@ -114,7 +114,7 @@ export default {
   },
 
     computed: {
-        products() {
+        showroom() {
             return this.$store.state.showroom;
         },
         users() {
@@ -158,7 +158,7 @@ export default {
 
 
     mounted() {
-        this.$store.dispatch("fetchShowrom");
+        this.$store.dispatch("fetchShowroom");
         this.$store.dispatch("fetchUsers");
     },
     

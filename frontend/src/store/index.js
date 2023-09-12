@@ -1,12 +1,12 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
-const connection = '';
+const connection = 'https://celestial-autos.onrender.com/';
 export default createStore({
   state: {
     users: null,
     user: null,
-    products: null,
-    product: null,
+    showroom: null,
+    car: null,
   },
   
   mutations: {
@@ -29,7 +29,7 @@ export default createStore({
       state.users.push(newUser);
     },
     deleteCar: (state, carId) => {
-      state.showroom = state.showroom.filter(car => car.CarID !== Id);
+      state.showroom = state.showroom.filter(car => car.CarID !== carId);
     },
     deleteUser: (state, userId) => {
       state.users = state.users.filter(user => user.userID !== userId);
@@ -126,6 +126,4 @@ export default createStore({
     },
   },
 
-  modules: {
-  }
 })
