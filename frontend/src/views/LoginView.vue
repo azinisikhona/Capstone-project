@@ -20,14 +20,34 @@ export default {
     };
   },
   methods: {
-    login() {
-      this.$store.dispatch("login", this.user)
-        .then(() => {
-          this.$router.push("/"); 
-        })
-        .catch((error) => {
-          console.error('Login failed:', error);
+   async login() {
+      try {
+        const response = await this.$store.dispatch("login",{
+          emailAdd: this.user.emailAdd,
+          userPass: this.user.userPass,
         });
+        if (
+          response &&
+          response.token &&
+          response.status === 200 &&
+          response.data
+        ) {
+          const token = response.token;
+          // this.$cookies.set("userToken", token);
+          const userData = response.data;
+          localStorage.setItem("userData", JSON.stringify(userData));
+          this.$router.push("/");
+        } else {
+          this.$router.push("/");
+          console.log(response);
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 401) {
+          this.loginError = "Log Err";
+        } else {
+          console.log(error);
+        }
+      }
     },
   },
 };
