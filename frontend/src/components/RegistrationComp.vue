@@ -4,8 +4,8 @@
     <form @submit.prevent="addUser">
       <input v-model="newUser.firstName" type="text" placeholder="firstName" required>
       <input v-model="newUser.lastName" type="taxt" placeholder="lastName" required>
-      <input v-model="newUser.userAge" type="number" placeholder="userAge" required>
-      <input v-model="newUser.gender" type="text" placeholder="Gender" required>
+      <input v-model="newUser.userDOB" type="text" placeholder="userDOB" required>
+      <input v-model="newUser.gender" type="text" placeholder="gender" required>
       <input v-model="newUser.userRole" type="text" placeholder="userRole" required>
       <input v-model="newUser.emailAdd" type="text" placeholder="Email" required />
       <input v-model="newUser.userPass" type="password" placeholder="Password" required />
@@ -22,7 +22,7 @@ export default {
       newUser: {
         firstName: '',
         lastName: '',
-        userAge: 0,
+        userDOB: '',
         gender: '',
         userRole: '',
         emailAdd: '',
@@ -38,7 +38,7 @@ export default {
         this.newUser = {
             firstName: '',
             lastName: '',
-            userAge: 0,
+            userDOB: '',
             gender: '',
             userRole: '',
             emailAdd: '',
