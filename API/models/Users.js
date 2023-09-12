@@ -82,8 +82,8 @@ class Users{
         db.query(query, [emailAdd], async (err, result) => {
           if (err) throw err;
           if (!result?.length) {
-            res.json({
-              status: res.statusCode,
+            res.status(401).json({
+            
               msg: "You provided a wrong email.",
             });
           } else {
@@ -101,8 +101,8 @@ class Users{
                   result: result[0],
                 });
               } else {
-                res.json({
-                  status: res.statusCode,
+                res.status(401).json({
+                  
                   msg: "Invalid password or you have not registered",
                 });
               }
