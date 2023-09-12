@@ -85,6 +85,8 @@ export default createStore({
         if (response.status === 200) {
           commit('setAuthenticated', true);
           commit('setLoginUser', response.data); 
+          console.log(response.data)
+          console.log('setAuthenticated', true);
         } else {
           commit('setAuthenticated', false);
           commit('setLoginUser', null);
