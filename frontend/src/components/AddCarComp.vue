@@ -70,3 +70,41 @@ export default {
   },
 };
 </script>
+<style scoped>
+form {
+  max-width: 400px;
+  margin: 0 auto;
+   border: 2px solid black;
+   padding: 1.875rem;
+   max-width: 22.875rem;
+    height: 20rem;
+    margin-top: 40px;
+    margin-bottom:130px;
+ border-radius: 0.4rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45A049;
+}
+</style>

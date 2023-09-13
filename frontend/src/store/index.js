@@ -103,6 +103,7 @@ export default createStore({
         const response = await axios.post(`${connection}addcar`, newCar);
         if (response.status === 201) {
           context.commit('addCar', newCar);
+          
         }
       } catch (error) {
         console.error('Error adding new car:', error);
