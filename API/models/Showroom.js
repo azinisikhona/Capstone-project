@@ -2,17 +2,18 @@ const db = require("../config");
 
 class Showroom {
     addCar(req, res) {
-        const car = {
-          Brands: req.body.Brands,
-          Model: req.body.Model,
-          MakeYear: req.body.MakeYear,
-          Price: req.body.Price,
-          Picture: req.body.Picture,
-          SupplierID: req.body.SupplierID
-        };
+        // const car = {
+        //   CarID: req.body.CarID,
+        //   Brands: req.body.Brands,
+        //   Model: req.body.Model,
+        //   MakeYear: req.body.MakeYear,
+        //   Price: req.body.Price,
+        //   Picture: req.body.Picture,
+        //   SupplierID: req.body.SupplierID
+        // };
     
         const query = `INSERT INTO Showroom SET ?`;
-        db.query(query, car, (err, result) => {
+        db.query(query, [req.body], (err) => {
           if (err) {
             console.error(err);
             res.status(500).json({
