@@ -3,7 +3,6 @@ const db = require("../config");
 class Orders {
   addOrder(req, res) {
     const order = {
-        OrderID: req.body.OrderID,
         UserID: req.body.UserID,
         CarID: req.body.CarID,
     };

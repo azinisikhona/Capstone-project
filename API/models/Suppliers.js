@@ -3,7 +3,6 @@ const db = require("../config");
 class Suppliers {
   addSupplier(req, res) {
     const supplier = {
-        SupplierID: req.body.SupplierID,
         Firstname: req.body.Firstname,
         Lastname: req.body.Lastname,
         ContactNo: req.body.ContactNo,
