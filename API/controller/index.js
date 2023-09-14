@@ -38,7 +38,7 @@ routes.get('/car/:id', (req, res) =>{
     showroom.fetchCar(req, res)
 })
 
-routes.post('/addcar', (req, res) =>{
+routes.post('/addcar', bodyParser.json(), (req, res) =>{
     showroom.addCar(req, res)
 })
 
