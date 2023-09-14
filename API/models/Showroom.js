@@ -12,7 +12,7 @@ class Showroom {
         };
     
         const query = `INSERT INTO Showroom SET ?;`
-        db.query(query, [req.body], (err) => {
+        db.query(query, [req.body], (err, result) => {
           if (err) {
             console.error(err);
             res.status(500).json({
