@@ -12,8 +12,8 @@ class Showroom {
           SupplierID: req.body.SupplierID
         };
     
-        const query = `INSERT INTO Showroom SET ?`;
-        db.query(query, car, (err, result) => {
+        const query = `INSERT INTO Showroom SET ?;`
+        db.query(query, [req.body], (err) => {
           if (err) {
             console.error(err);
             res.status(500).json({
