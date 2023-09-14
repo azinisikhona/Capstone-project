@@ -32,6 +32,10 @@
         <li class="nav-item">
         <router-link to="/login" class="nav">Login</router-link>
         </li>
+
+        <li class="nav-item">
+        <router-link to="/register" class="nav">Register</router-link>
+        </li>
       </ul>
     </div>
   </div>

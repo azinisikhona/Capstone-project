@@ -77,7 +77,7 @@ form {
    border: 2px solid black;
    padding: 1.875rem;
    max-width: 22.875rem;
-    height: 20rem;
+    /* height: 20rem; */
     margin-top: 40px;
     margin-bottom:130px;
  border-radius: 0.4rem;
