@@ -3,6 +3,7 @@ const db = require("../config");
 class Showroom {
     addCar(req, res) {
         const car = {
+          CarID: req.body.CarID,
           Brands: req.body.Brands,
           Model: req.body.Model,
           MakeYear: req.body.MakeYear,

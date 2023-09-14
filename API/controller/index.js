@@ -38,12 +38,12 @@ routes.get('/car/:id', (req, res) =>{
     showroom.fetchCar(req, res)
 })
 
-routes.post('/addcar', (req, res) =>{
+routes.post('/addcar', bodyParser.json(), (req, res) =>{
     showroom.addCar(req, res)
 })
 
 
-routes.patch('/car/:id', (req, res) => {
+routes.patch('/car/:id', bodyParser.json(), (req, res) => {
     showroom.updateCar(req, res)
 })
 
@@ -61,12 +61,12 @@ routes.get('/supplier/:id', (req, res) =>{
     suppliers.fetchSuppliers(req, res)
 })
 
-routes.post('/addsupplier', (req, res) =>{
+routes.post('/addsupplier', bodyParser.json(), (req, res) =>{
     suppliers.addSupplier(req, res)
 })
 
 
-routes.patch('/supplier/:id', (req, res) => {
+routes.patch('/supplier/:id', bodyParser.json(), (req, res) => {
     suppliers.updateSupplier(req, res)
 })
 
@@ -84,12 +84,12 @@ routes.get('/order/:id', (req, res) =>{
     orders.fetchOrder(req, res)
 })
 
-routes.post('/addorder', (req, res) =>{
+routes.post('/addorder', bodyParser.json(), (req, res) =>{
     orders.addOrder(req, res)
 })
 
 
-routes.patch('/order/:id', (req, res) => {
+routes.patch('/order/:id', bodyParser.json(), (req, res) => {
     orders.updateOrder(req, res)
 })
 
