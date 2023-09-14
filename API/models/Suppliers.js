@@ -4,8 +4,9 @@ class Suppliers {
   addSupplier(req, res) {
     const supplier = {
         SupplierID: req.body.SupplierID,
-        FullName: req.body.FullName,
-        ContactNo: req.body.FullName,
+        Firstname: req.body.Firstname,
+        Lastname: req.body.Lastname,
+        ContactNo: req.body.ContactNo,
         Region: req.body.Region,
     };
 
@@ -23,7 +24,7 @@ class Suppliers {
 
   fetchSuppliers(req, res) {
     const query = `
-            SELECT SupplierID, FullName, ContactNo, Region FROM Suppliers
+            SELECT SupplierID, Firstname, Lastname, ContactNo, Region FROM Suppliers
         `;
 
     db.query(query, (err, results) => {
@@ -38,7 +39,7 @@ class Suppliers {
 
   fetchSupplier(req, res) {
     const query = `
-            SELECT SupplierID, FullName, ContactNo, Region FROM Suppliers WHERE SupplierID = ?
+    SELECT SupplierID, FirstName, Lastname, ContactNo, Region FROM Suppliers WHERE SupplierID = ?
         `;
     db.query(query, [req.params.id], (err, result) => {
         if (err) {

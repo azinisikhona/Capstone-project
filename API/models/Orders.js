@@ -6,8 +6,6 @@ class Orders {
         OrderID: req.body.OrderID,
         UserID: req.body.UserID,
         CarID: req.body.CarID,
-        Quantity: req.body.Quantity,
-        OrderDate: req.body.OrderDate,
     };
 
     const query = "INSERT INTO Orders SET ?";
@@ -24,7 +22,7 @@ class Orders {
 
   fetchOrders(req, res) {
     const query = `
-            SELECT OrderID, UserID, CarID, Quantity, OrderDate FROM Orders
+            SELECT OrderID, UserID, CarID FROM Orders
         `;
 
     db.query(query, (err, results) => {
@@ -39,7 +37,7 @@ class Orders {
 
   fetchOrder(req, res) {
     const query = `
-      SELECT OrderID, UserID, CarID, Quantity, OrderDate FROM Orders WHERE OrderID = ?
+      SELECT OrderID, UserID, CarID FROM Orders WHERE OrderID = ?
     `;
     db.query(query, [req.params.id], (err, result) => {
       if (err) {
