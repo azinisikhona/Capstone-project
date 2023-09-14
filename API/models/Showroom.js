@@ -1,48 +1,48 @@
 const db = require("../config");
 
 class Showroom {
-    // addCar(req, res) {
-    //     const car = {
-    //       Brands: req.body.Brands,
-    //       Model: req.body.Model,
-    //       MakeYear: req.body.MakeYear,
-    //       Price: req.body.Price,
-    //       Picture: req.body.Picture,
-    //       SupplierID: req.body.SupplierID
-    //     };
-    
-    //     const query = `INSERT INTO Showroom SET ?`;
-    //     db.query(query, car, (err, result) => {
-    //       if (err) {
-    //         console.error(err);
-    //         res.status(500).json({
-    //           status: 500,
-    //           msg: "Failed to add car",
-    //         });
-    //       } else {
-    //         res.json({
-    //           status: res.statusCode,
-    //           msg: "Car added successfully",
-    //           CarID: result.insertId,
-    //         });
-    //       }
-    //     });
-    //   }
-
     addCar(req, res) {
-      const data = req.body
-      const query = `
-      INSERT INTO Showroom
-      SET ?;
-      `
-      db.query(query,[data], (err) => {
-          if(err) {
-              throw err
+        const car = {
+          Brands: req.body.Brands,
+          Model: req.body.Model,
+          MakeYear: req.body.MakeYear,
+          Price: req.body.Price,
+          Picture: req.body.Picture,
+          SupplierID: req.body.SupplierID
+        };
+    
+        const query = `INSERT INTO Showroom SET ?;`
+        db.query(query, car, (err, result) => {
+          if (err) {
+            console.error(err);
+            res.status(500).json({
+              status: 500,
+              msg: "Failed to add car",
+            });
           } else {
-              res.json({ status: res.statusCode, msg: "car added!" })
+            res.json({
+              status: res.statusCode,
+              msg: "Car added successfully",
+              CarID: result.insertId,
+            });
           }
-      })
-  }
+        });
+      }
+
+  //   addCar(req, res) {
+  //     const data = req.body
+  //     const query = `
+  //     INSERT INTO Showroom
+  //     SET ?;
+  //     `
+  //     db.query(query,[data], (err) => {
+  //         if(err) {
+  //             throw err
+  //         } else {
+  //             res.json({ status: res.statusCode, msg: "car added!" })
+  //         }
+  //     })
+  // }
      
 
   fetchShowroom(req, res) {
