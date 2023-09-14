@@ -12,21 +12,26 @@ class Showroom {
         //   SupplierID: req.body.SupplierID
         // };
     
-        const query = `INSERT INTO Showroom SET ?`;
+        const query = `INSERT INTO Showroom SET ?;`
         db.query(query, [req.body], (err) => {
-          if (err) {
-            console.error(err);
-            res.status(500).json({
-              status: 500,
-              msg: "Failed to add car",
-            });
-          } else {
+          // if (err) {
+          //   console.error(err);
+          //   res.status(500).json({
+          //     status: 500,
+          //     msg: "Failed to add car",
+          //   });
+            if(err) throw err
             res.json({
-              status: res.statusCode,
-              msg: "Car added successfully",
-              CarID: result.insertId,
-            });
-          }
+                status: res.statusCode,
+                msg: "New car Added"
+            })
+          // } else {
+          //   res.json({
+          //     status: res.statusCode,
+          //     msg: "Car added successfully",
+          //     CarID: result.insertId,
+          //   });
+          // }
         });
       }
      
