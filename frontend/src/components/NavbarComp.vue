@@ -42,8 +42,8 @@ export default {
 }
 </script>
 <style scoped>
-.navbar{
-background-color: burlywood;
+nav{
+background-color:#FF4136 !important;
 overflow: hidden;
 }
 .nav {
@@ -52,7 +52,7 @@ text-align: center;
 padding: 12px;
 text-decoration: none;
 font-size: 17px;
-color: brown;
+color:black;
 }
 .nav:hover{
    background-color: antiquewhite;

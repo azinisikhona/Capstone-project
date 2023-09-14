@@ -57,7 +57,7 @@ export default {
  form {
   max-width: 400px;
   margin: 0 auto;
-   border: 2px solid black;
+   border: 2px solid white;
    padding: 1.875rem;
    max-width: 22.875rem;
     height: 15rem;
