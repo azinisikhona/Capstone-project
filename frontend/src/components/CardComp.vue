@@ -1,39 +1,109 @@
 <template>
-<router-link to="/singleView">
   <div class="col-12 col-lg-4 col-sm-6 p-1">
     <div class="card">
-      <img :src="car.Picture" class="mx-auto img-fluid"  alt="...">
+      <img :src="car.Picture" class="mx-auto img-fluid" alt="...">
       <div class="car-details">
         <h3 class="Car-Brand">{{ car.Brands }}</h3>
         <p class="Car-Model">{{ car.Model }}</p>
         <p class="Car-Price">R{{ car.Price }}</p>
-        <button class="buy-button">Buy</button>
-        <button class="add-to-wishlist-button" @click="addToWishlist">Add to Wishlist</button>
+        <router-link to="/checkout">
+        <button class="btn btn-slide">Buy</button></router-link>
+        <button class="btn btn-slide">See More</button>
       </div>
     </div>
   </div>
-</router-link>
-  
 </template>
 
 <script>
 export default {
   props: ["car"],
-  methods: {
-    addToWishlist() {
-      this.$emit("add-to-wishlist", this.car);
-    },
-  },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+router-link {
+  text-decoration: none;
+}
+
 .card {
   background-color: #c2dbf8;
-  height: 25rem;
+  height: 30rem;
   padding: 3px;
-}
-img {
-  height: 15rem;
+
+  img {
+    height: 15rem;
+  }
+
+  .btn {
+    width: 100px;
+    border-radius: 0;
+    // font-weight: 700;
+    margin: 15px;
+    // padding: 10px 60px;
+    border: 2px solid;
+    transition: color .1s ease;
+
+    &:hover,
+    &:focus {
+      color: #333;
+      border-color: black;
+    }
+  }
+
+  .btn-slide {
+    color: #FFF;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    
+    &:before,
+    &:after {
+      content: "";    
+      background: #fff;
+      content: "";
+      height: 200px;
+      opacity: 1;
+      position: absolute;
+      top: -85px;
+      width: 0%;
+      z-index: -1;
+    }
+    
+    &:before {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      left: -25%;
+      -webkit-transition: all 1s cubic-bezier(.19,1,.22,1);
+      transition: all 1s cubic-bezier(.19,1,.22,1);
+    }
+    
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      right: -15%;
+      -webkit-transition: all 1s cubic-bezier(.19,1,.22,1);
+      transition: all 1s cubic-bezier(.19,1,.22,1);
+    }
+    
+    &:hover,
+    &:focus {
+      color: #333;
+      border-color: #FFF;
+      
+      &:before,
+      &:after  {
+        background-color: #FFF;
+      }
+      
+      &:before {
+        width: 120%;
+      }
+      
+      &:after  {
+        background-color: green;
+        width: 10%;
+      }
+    }
+  }
 }
 </style>

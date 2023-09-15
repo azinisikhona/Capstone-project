@@ -10,7 +10,7 @@
       <input v-model="newUser.emailAdd" type="text" placeholder="Email" required />
       <input v-model="newUser.userPass" type="password" placeholder="Password" required />
       <input v-model="newUser.profileUrl" type="text" placeholder="ProfileUrl" required>
-      <button type="submit">Register</button>
+      <button class="btn" type="submit">Register</button>
     </form>
   </div>
 </template>

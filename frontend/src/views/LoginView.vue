@@ -4,7 +4,7 @@
     <form @submit.prevent="login">
       <input v-model="user.emailAdd" type="text" placeholder="Email" required />
       <input v-model="user.userPass" type="password" placeholder="Password" required />
-      <button type="submit">Login</button>
+      <button class="btn" type="submit">Login</button>
     </form>
   </div>
 </template>
@@ -60,7 +60,6 @@ export default {
    border: 2px solid white;
    padding: 1.875rem;
    max-width: 22.875rem;
-    height: 15rem;
     margin-top: 40px;
     margin-bottom:130px;
  border-radius: 0.4rem;

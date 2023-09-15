@@ -218,7 +218,4 @@ th, td {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background: #C2DBF8;
-}
 </style>

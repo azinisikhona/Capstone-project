@@ -1,7 +1,7 @@
 <template>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-1">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar w/ text</a>
+    <img src="https://i.postimg.cc/hvVH696S/Screenshot-2023-08-28-100442.png" class="logo" alt="">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,5 +61,9 @@ color:black;
 .nav:hover{
    background-color: antiquewhite;
    border-radius: 10px;
+}
+
+.logo {
+  height: 3rem;
 }
 </style>
