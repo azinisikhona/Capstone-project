@@ -51,7 +51,7 @@
         <tr v-for="user in filteredUsers" :key="user.userID">
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
-          <td>{{ user.userAge }}</td>
+          <td>{{ user.userDOB}}</td>
           <td>{{ user.gender }}</td>
           <td>{{ user.userRole }}</td>
           <td>{{ user.emailAdd }}</td>
@@ -179,9 +179,7 @@ export default {
     .addCar {
         text-decoration: none;
     }
-    /* .addUser {
-        text-decoration: none;
-    } */
+
 
     .card {
         height: 8rem;

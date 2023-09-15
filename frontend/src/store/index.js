@@ -115,9 +115,12 @@ export default createStore({
         const response = await axios.post(`${connection}register`, newUser);
         if (response.status === 201) {
           context.commit('addUser', newUser);
+          return true;
         }
+        return false;
       } catch (error) {
         console.error('Error adding new user:', error);
+        return false;
       }
     },
 

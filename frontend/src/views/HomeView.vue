@@ -7,7 +7,7 @@
         <img src="https://i.postimg.cc/jdj0DxRq/ferrari-removebg-preview-1.png" class="img-fluid my-auto" alt="img" id="images" style="" >
      </li>
      <li class="card" style="width: 18rem;">
-      <img src="https://i.postimg.cc/GtJT5mG8/lamborghini-removebg-preview-1.png" class="img-fluid my-auto" alt="img" id="images">
+      <img src="https://i.postimg.cc/HkPZ3v57/lamborghini-removebg-preview.png" class="img-fluid my-auto" alt="img" id="images">
    </li>
    <li class="card" style="width: 18rem;">
     <img src="https://i.postimg.cc/xCC1zGLW/Koenigsegg-logo-1994-2048x2048.png" class="img-fluid my-auto" alt="img" id="images">

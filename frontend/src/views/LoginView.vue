@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
+
 export default {
   data() {
     return {
@@ -37,9 +39,22 @@ export default {
           const userData = response.data;
           localStorage.setItem("userData", JSON.stringify(userData));
           this.$router.push("/");
+
+          // Show a success message using SweetAlert
+          Swal.fire({
+            icon: 'success',
+            title: 'Login Successful',
+            text: 'You have successfully logged in!',
+          });
         } else {
           this.$router.push("/");
-          console.log(response);
+
+          // Show an error message using SweetAlert
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: 'Failed to log in. Please check your credentials.',
+          });
         }
       } catch (error) {
         if (error.response && error.response.status === 401) {

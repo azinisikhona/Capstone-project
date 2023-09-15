@@ -8,7 +8,9 @@
         <p class="Car-Price">R{{ car.Price }}</p>
         <router-link to="/checkout">
         <button class="btn btn-slide">Buy</button></router-link>
+        <router-link to="/singleview">
         <button class="btn btn-slide">See More</button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -26,9 +28,10 @@ router-link {
 }
 
 .card {
-  background-color: #c2dbf8;
+  background-color: #212529;
   height: 30rem;
   padding: 3px;
+  color: white;
 
   img {
     height: 15rem;
@@ -45,7 +48,7 @@ router-link {
 
     &:hover,
     &:focus {
-      color: #333;
+      // color: #333;
       border-color: black;
     }
   }

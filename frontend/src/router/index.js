@@ -50,6 +50,11 @@ const routes = [
     path: '/checkout',
     name: 'checkout',
     component: () => import('../views/CheckoutView.vue')
+  },
+  {
+    path: '/singleview',
+    name: 'singleview',
+    component: () => import('../components/SingleComp.vue')
   }
   
 ]

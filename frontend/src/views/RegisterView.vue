@@ -3,7 +3,7 @@
     <h2>Registration</h2>
     <form @submit.prevent="addUser">
       <input v-model="newUser.firstName" type="text" placeholder="First name" required>
-      <input v-model="newUser.lastName" type="taxt" placeholder="Last name" required>
+      <input v-model="newUser.lastName" type="text" placeholder="Last name" required>
       <input v-model="newUser.userDOB" type="text" placeholder="DOB" required>
       <input v-model="newUser.gender" type="text" placeholder="Gender" required>
       <input v-model="newUser.userRole" type="text" placeholder="Role" required>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
+
 export default {
   data() {
     return {
@@ -34,24 +36,41 @@ export default {
   methods: {
     async addUser() {
       try {
+        // Assuming this.$store.dispatch('addNewUser') is an asynchronous action that registers the user.
         await this.$store.dispatch('addNewUser', this.newUser);
+
+        // Show a success message using SweetAlert
+        Swal.fire({
+          icon: 'success',
+          title: 'Registration Successful',
+          text: 'You have successfully registered!',
+        });
+
+        // Reset the newUser object
         this.newUser = {
-            firstName: '',
-            lastName: '',
-            userDOB: '',
-            gender: '',
-            userRole: '',
-            emailAdd: '',
-            userPass: '',
-            profileUrl: '',
+          firstName: '',
+          lastName: '',
+          userDOB: '',
+          gender: '',
+          userRole: '',
+          emailAdd: '',
+          userPass: '',
+          profileUrl: '',
         };
       } catch (error) {
+        // Show an error message using SweetAlert
+        Swal.fire({
+          icon: 'error',
+          title: 'Registration Failed',
+          text: 'Failed to register user. Please try again later.',
+        });
         console.error('Failed to register user:', error);
       }
     },
   },
 };
 </script>
+
 <style scoped>
 
  form {

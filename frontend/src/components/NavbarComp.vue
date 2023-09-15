@@ -25,10 +25,6 @@
          <router-link to="/admin" class="nav">Admin</router-link>
         </li>
 
-         <li class="nav-item">
-          <router-link to="/cart" class="nav">Cart</router-link>
-        </li>
-
         <li class="nav-item">
         <router-link to="/login" class="nav">Login</router-link>
         </li>
