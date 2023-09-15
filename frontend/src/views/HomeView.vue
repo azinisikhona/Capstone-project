@@ -4,28 +4,28 @@
     <div class="container">
     <ul class="cards">
      <li class="card" style="width: 18rem;">
-        <img src="https://i.postimg.cc/j2y2xxH5/ferrari.png" alt="img" id="images" style="" >
+        <img src="https://i.postimg.cc/jdj0DxRq/ferrari-removebg-preview-1.png" class="img-fluid my-auto" alt="img" id="images" style="" >
      </li>
      <li class="card" style="width: 18rem;">
-      <img src="https://i.postimg.cc/SNWYqrdr/lamborghini.png" alt="img" id="images">
+      <img src="https://i.postimg.cc/GtJT5mG8/lamborghini-removebg-preview-1.png" class="img-fluid my-auto" alt="img" id="images">
    </li>
    <li class="card" style="width: 18rem;">
-    <img src="https://i.postimg.cc/xCC1zGLW/Koenigsegg-logo-1994-2048x2048.png" alt="img" id="images">
+    <img src="https://i.postimg.cc/xCC1zGLW/Koenigsegg-logo-1994-2048x2048.png" class="img-fluid my-auto" alt="img" id="images">
  </li>
  <li class="card" style="width: 18rem;">
-  <img src="https://i.postimg.cc/wvT7kYY4/bugatti.png" alt="img" id="images">
+  <img src="https://i.postimg.cc/P5TXjTnz/bugatti-removebg-preview.png" class="img-fluid my-auto" alt="img" id="images">
 </li>
 <li class="card" style="width: 18rem;">
-  <img src="https://i.postimg.cc/L53QFPb8/Pagani.jpg" alt="img" id="images">
+  <img src="https://i.postimg.cc/XYLVNmVM/Pagani-removebg-preview.png" class="img-fluid my-auto" alt="img" id="images">
 </li>
 <li class="card" style="width: 18rem;">
-  <img src="https://i.postimg.cc/pdSgsKwN/Aston-Martin.png" alt="img" id="images">
+  <img src="https://i.postimg.cc/Sx1VkWKf/Aston-Martin-removebg-preview.png" class="img-fluid my-auto" alt="img" id="images">
 </li>
 <li class="card" style="width: 18rem;">
-  <img src="https://i.postimg.cc/bY4wZtrB/Porsche.png" alt="img" id="images">
+  <img src="https://i.postimg.cc/d3FZQ63h/Porsche-removebg-preview.png" class="img-fluid my-auto" alt="img" id="images">
 </li>
 <li class="card" style="width: 18rem;">
-  <img src="https://i.postimg.cc/05KcYT5y/Mclaren.png" alt="img" id="images">
+  <img src="https://i.postimg.cc/05KcYT5y/Mclaren.png" class="img-fluid my-auto" alt="img" id="images">
 </li>
     </ul>
   </div>
@@ -75,7 +75,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex: 0 0 100%;
-    padding: 20px;
+    /* padding: 20px; */
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);

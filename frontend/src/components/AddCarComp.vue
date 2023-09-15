@@ -20,12 +20,14 @@
       <input v-model="newCar.Picture" type="text" id="Picture">
 
       <label for="SupplierID">SupplierID</label>
+      <div>
       <select v-model="newCar.SupplierID" name="SupplierID" id="SupplierID">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
+      </div>
 
       <button type="submit">Add Car</button>
     </form>

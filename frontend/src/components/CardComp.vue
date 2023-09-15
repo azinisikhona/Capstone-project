@@ -1,7 +1,8 @@
 <template>
-  <div class="col-12 col-lg-3 col-sm-6 p-1">
+<router-link to="/singleView">
+  <div class="col-12 col-lg-4 col-sm-6 p-1">
     <div class="card">
-      <img :src="car.Picture" class="mx-auto"  alt="...">
+      <img :src="car.Picture" class="mx-auto img-fluid"  alt="...">
       <div class="car-details">
         <h3 class="Car-Brand">{{ car.Brands }}</h3>
         <p class="Car-Model">{{ car.Model }}</p>
@@ -11,6 +12,8 @@
       </div>
     </div>
   </div>
+</router-link>
+  
 </template>
 
 <script>
@@ -18,7 +21,6 @@ export default {
   props: ["car"],
   methods: {
     addToWishlist() {
-      // Emit an event to notify the parent component to add the car to the wishlist
       this.$emit("add-to-wishlist", this.car);
     },
   },
@@ -29,6 +31,7 @@ export default {
 .card {
   background-color: #c2dbf8;
   height: 25rem;
+  padding: 3px;
 }
 img {
   height: 15rem;
